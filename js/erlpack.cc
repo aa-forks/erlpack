@@ -46,4 +46,9 @@ NAN_MODULE_INIT(Init) {
     // target->Set(Nan::New("unpack").ToLocalChecked(), Nan::New<FunctionTemplate>(Unpack)->GetFunction());
 }
 
-NODE_MODULE(erlpack, Init);
+
+#if NODE_MAJOR_VERSION >= 10
+NAN_MODULE_WORKER_ENABLED(erlpack, Init)
+#else
+NODE_MODULE(erlpack, Init)
+#endif
