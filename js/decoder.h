@@ -25,8 +25,8 @@ public:
     {
         const auto version = read8();
         if (version != FORMAT_VERSION) {
-            THROW("Bad version number.");
-            isInvalid = true;
+            //THROW("Bad version number.");
+            //isInvalid = true;
         }
     }
 
@@ -39,8 +39,8 @@ public:
         if (!skipVersion) {
             const auto version = read8();
             if (version != FORMAT_VERSION) {
-                THROW("Bad version number.");
-                isInvalid = true;
+                //THROW("Bad version number.");
+                //isInvalid = true;
             }
         }
     }
